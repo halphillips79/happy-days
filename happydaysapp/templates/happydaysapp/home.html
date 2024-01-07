@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Happy Days Character Appearance Database</title>
+    <link rel="stylesheet" href="../../static/happydaysapp/styles.css">
+</head>
+<body>
+
+    {% include 'header.html' %}
+
+    <!-- Section 1: Search a character -->
+    <h2>Search by character:</h2>
+    <h4>See which episodes a character has appeared in.</h4>
+    <form action="/search_episodes_by_character/" method="GET">
+        <input type="text" name="character_name" placeholder="Enter character name">
+        <input type="submit" value="Search">
+        <a href="#" class="more-options" data-target="additional-filters-1">More Options</a>
+        <div id="additional-filters-1" class="additional-filters">
+            <input type="text" name="season_start" placeholder="Earliest season (#)">
+            <input type="text" name="season_end" placeholder="Latest season (#)">
+            <input type="text" name="start_date" placeholder="Start date (YYYY-MM-DD)">
+            <input type="text" name="end_date" placeholder="End date (YYYY-MM-DD)">
+        </div>
+    </form>
+
+    <!-- Section 2: Search coappearances -->
+    <h2>Search coappearances:</h2>
+    <h4>Select any two characters to see which episodes they've appeared in together.
+    <br>(This means they appeared in the same scene, not just the same episode. Dream sequences don't count!)</h4>
+    <form action="/search_coappearances/" method="GET">
+        <input type="text" name="character1_name" placeholder="Enter first character name">
+        <input type="text" name="character2_name" placeholder="Enter second character name">
+        <input type="submit" value="Search">
+        <a href="#" class="more-options" data-target="additional-filters-2">More Options</a>
+        <div id="additional-filters-2" class="additional-filters">
+            <input type="text" name="season_start" placeholder="Earliest season (#)">
+            <input type="text" name="season_end" placeholder="Latest season (#)">
+            <input type="text" name="start_date" placeholder="Start date (YYYY-MM-DD)">
+            <input type="text" name="end_date" placeholder="End date (YYYY-MM-DD)">
+        </div>
+    </form>
+
+    <!-- Section 3: Rank characters by appearances -->
+    <h2>Rank characters by appearances:</h2>
+    <h4>See which characters have appeared in the most episodes.</h4>
+    <form action="/rank_characters_by_appearances/" method="GET">
+        <input type="submit" value="All characters, all episodes">
+        <a href="#" class="more-options" data-target="additional-filters-3">More Options</a>
+        <div id="additional-filters-3" class="additional-filters">
+            <input type="text" name="gender" placeholder="Gender (M/F)">
+            <input type="text" name="regular" placeholder="Series regular (T/F)">
+            <input type="text" name="season_start" placeholder="Earliest season (#)">
+            <input type="text" name="season_end" placeholder="Latest season (#)">
+            <input type="text" name="start_date" placeholder="Start date (YYYY-MM-DD)">
+            <input type="text" name="end_date" placeholder="End date (YYYY-MM-DD)">
+        </div>
+    </form>
+
+    <!-- Section 4: Rank characters by coappearances -->
+    <h2>Rank character combinations by appearances:</h2>
+    <h4>See which pairs of characters have appeared together the most.</h4>
+    <form action="/rank_character_combinations/" method="GET">
+        <input type="submit" value="All characters, all episodes">
+        <a href="#" class="more-options" data-target="additional-filters-4">More Options</a>
+        <div id="additional-filters-4" class="additional-filters">
+            <input type="text" name="gender" placeholder="Gender (M/F)">
+            <input type="text" name="regular" placeholder="Series regular (T/F)">
+            <input type="text" name="season_start" placeholder="Earliest season (#)">
+            <input type="text" name="season_end" placeholder="Latest season (#)">
+            <input type="text" name="start_date" placeholder="Start date (YYYY-MM-DD)">
+            <input type="text" name="end_date" placeholder="End date (YYYY-MM-DD)">
+        </div>
+    </form>
+
+    <script>
+        // Get all elements with class 'more-options' and add event listener
+        document.querySelectorAll('.more-options').forEach(function(element) {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetDivId = e.target.getAttribute('data-target');
+                var filtersDiv = document.getElementById(targetDivId);
+                if (filtersDiv.style.display === 'none' || filtersDiv.style.display === '') {
+                    filtersDiv.style.display = 'block';
+                } else {
+                    filtersDiv.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    {% include 'footer.html' %}
+</body>
+</html>

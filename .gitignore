@@ -1,0 +1,18 @@
+# SQLite database file
+db.sqlite3
+
+# Environment variables
+settings.env
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Django migrations
+happydayswebsite/happydaysapp/migrations/
+
+# macOS system files
+.DS_Store
+
+# Log files
+*.log

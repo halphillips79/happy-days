@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Matches</title>
+    <link rel="stylesheet" href="../../static/happydaysapp/styles.css">
+</head>
+<body>
+    {% include 'header.html' %}
+    <h2>Character matches:</h2>
+    <ul>
+        {% for character in characters %}
+            <li>
+                <a href="{% url 'search_episodes_by_character' %}?character_name={{ character.name }}&season_start={{ season_start }}&season_end={{ season_end }}&start_date={{ start_date }}&end_date={{ end_date }}">
+                    {{ character.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% include 'footer.html' %}
+</body>
+</html>

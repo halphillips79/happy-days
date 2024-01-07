@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><h1>Coappearances: {{ character1_name }} and {{ character2_name }}</h1></title>
+    <link rel="stylesheet" href="../../static/happydaysapp/styles.css">
+</head>
+<body>
+    {% include 'header.html' %}
+    <h2>Co-Appearances</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Season</th>
+                <th>Episode</th>
+                <th>Title</th>
+                <th>Airdate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for episode in episodes %}
+                <tr>
+                    <td>{{ episode.season }}</td>
+                    <td>{{ episode.episode_number }}</td>
+                    <td>{{ episode.title }}</td>
+                    <td>{{ episode.airdate }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Total: {{ episodes.count }}</p>
+    {% include 'footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Happy Days Character Appearance Database</title>
+    <link rel="stylesheet" href="../../static/happydaysapp/styles.css">
+</head>
+<body>
+
+    {% include 'header.html' %}
+
+    <h1>About The Happy Days Character Appearance Database</h1>
+
+    <h3>What is The Happy Days Character Appearance Database?</h3>
+    <p>The Happy Days Character Appearance Database is a database of which Happy Days characters have appeared in scenes together. You can use this database to look up which characters have appeared together the most often, who's appeared with a given character the most often, etc.
+
+    <h3>What does or doesn't count as appearing together?</h3>
+    <p>Any time two characters appear in a scene together, that counts as a "co-appearance", even if they don't interact. This doesn't include fantasy sequences, dream sequences, etc., because that's not really the character, that's just Richie's subconscious mind pretending to be Fonzie.
+
+    <h3>Why are the results incomplete?</h3>
+    <p>Because this site is a work in progress! It will be complete as soon as I've finished watching every episode of Happy Days.
+
+    <h3>Why have you done this?</h3>
+    <p>As a learning-to-code project, to show off different programming skills I've acquired.
+
+    <h3>Okay, that makes sense. So what technical knowledge did you use to make this site?</h3>
+    <p>A bunch:
+    <p><ul>
+        <li>The code was written using Python, HTML, and CSS.</li>
+        <li>The site was developed using Django as its web framework.</li>
+        <li>The data is stored and queried using SQL.</li>
+    </ul>
+    <p>I can be hired to do these things and more!
+
+    <h3>How can I get in touch?</h3>
+    <p>If you have any feedback on the site (including suggestions/requests) or would like to hire me for a coding project, please <a href="mailto:halphillips@gmail.com">email me</a>!
+
+    <script>
+        // Get all elements with class 'more-options' and add event listener
+        document.querySelectorAll('.more-options').forEach(function(element) {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetDivId = e.target.getAttribute('data-target');
+                var filtersDiv = document.getElementById(targetDivId);
+                if (filtersDiv.style.display === 'none' || filtersDiv.style.display === '') {
+                    filtersDiv.style.display = 'block';
+                } else {
+                    filtersDiv.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    {% include 'footer.html' %}
+</body>
+</html>

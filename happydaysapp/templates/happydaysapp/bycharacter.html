@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Episodes By Character</title>
+    <link rel="stylesheet" href="../../static/happydaysapp/styles.css">
+</head>
+<body>
+    {% include 'header.html' %}
+    <h2>Episodes featuring {{ character_name }}:</h2>
+    <ul>
+        {% for episode in episodes %}
+            <li>{{ episode.title }} - Season {{ episode.season }}</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Total number of episodes: {{ episodes|length }}</strong></p>
+    {% include 'footer.html' %}
+</body>
+</html>

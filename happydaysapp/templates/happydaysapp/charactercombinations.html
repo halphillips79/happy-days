@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rank Character Combinations</title>
+    <link rel="stylesheet" href="../../static/happydaysapp/styles.css">
+</head>
+<body>
+    {% include 'header.html' %}
+    <h2>Your results:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Character 1</th>
+                <th>Character 2</th>
+                <th>Coappearances</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+<script>
+    var current_rank = 0;
+    var last_coappearances = -1;
+    var actual_counter = 0;
+    var combinations = {{ combinations|safe }};
+    var tbody = document.querySelector("tbody");
+    
+    combinations.forEach(function(combination, index) {
+        actual_counter = index + 1;
+        if (combination.coappearances === last_coappearances) {
+            // keep the same rank if the value is the same as last one
+        } else {
+            // update the rank to be the actual counter
+            current_rank = actual_counter;
+        }
+
+        var row = `<tr>
+            <td>${current_rank}</td>
+            <td>${combination.c1_name}</td>
+            <td>${combination.c2_name}</td>
+            <td>${combination.coappearances}</td>
+        </tr>`;
+
+        tbody.insertAdjacentHTML('beforeend', row);
+
+        last_coappearances = combination.coappearances;
+    });
+</script>
+
+    {% include 'footer.html' %}
+</body>
+</html>
