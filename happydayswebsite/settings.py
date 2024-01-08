@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'happydayswebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv("DB_ENGINE", 'django.db.backends.mysql'),
-        'NAME': os.getenv("DB_NAME", 'happydays'),
-        'USER': os.getenv("DB_USER", 'root'),
-        'PASSWORD': os.getenv("DB_PASSWORD", 'FwDA3e9hS8w4c5'),
-        'HOST': os.getenv("DB_HOST", 'localhost'),
-        'PORT': os.getenv("DB_PORT", '3306'),
+        'ENGINE': os.getenv("DB_ENGINE"),
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
+        'PORT': os.getenv("DB_PORT"),
     }
 }
 
