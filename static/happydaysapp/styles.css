@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+
+:root {
+    --background-color: #FFFFFF;
+    --text-color: #2E2E2E;
+    --header-bg: #3498db;
+    --header-color: #FFF;
+    --form-bg: #FFF5EE;
+    --border-color: #000000;
+    --btn-bg: #3498db;
+    --btn-hover-bg: #2980b9;
+    --link-color: #3498db;
+    --input-text-color: #2E2E2E;
+    --input-border-color: #000000;
+    --input-bg: #FFFFFF;
+}
+
+/* Reset */
+body, h1, h2, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+    padding-bottom: 80px;
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Headings */
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+h1 {
+    color: var(--header-color);
+    font-size: 36px;
+    text-align: center;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+/* Form Styling */
+form {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border: 2px dashed var(--border-color);
+    text-align: center;
+}
+
+input[type="text"] {
+    width: calc(25% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid var(--input-border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    color: var(--input-text-color);
+    background-color: var(--input-bg);
+}
+
+input[type="submit"] {
+    background-color: var(--btn-bg);
+    color: var(--form-bg);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+.more-options {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.additional-filters {
+    display: none;
+    margin-top: 10px;
+}
+
+@media(min-width: 768px) {
+    input[type="text"] {
+        width: calc(15% - 10px);
+        display: inline-block;
+        margin: 0 auto 10px auto;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-color);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+footer a {
+    color: var(--header-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
