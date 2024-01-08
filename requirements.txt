@@ -48,6 +48,7 @@ pyinstaller-hooks-contrib==2023.3
 pyparsing==3.0.9
 pytest==7.4.2
 python-dateutil==2.8.2
+python-dotenv
 pytz==2023.3
 pywin32-ctypes==0.2.0
 requests==2.31.0
