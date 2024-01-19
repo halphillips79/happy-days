@@ -3,7 +3,6 @@ from django.db import models
 class Episodes(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
-    series = models.CharField(max_length=255)
     season = models.IntegerField()
     episode_number = models.IntegerField()
     airdate = models.DateField()
@@ -40,8 +39,8 @@ class Character_Scene(models.Model):
     scene = models.ForeignKey(Scenes, related_name='character_scenes', on_delete=models.CASCADE)
     character = models.ForeignKey(Characters, related_name='character_scenes', on_delete=models.CASCADE)
     REGULAR_CHOICES = [
-        ('Y', 'Yes'),
-        ('N', 'No'),
+        ('T', 'True'),
+        ('F', 'False'),
     ]
     regular = models.CharField(max_length=1, choices=REGULAR_CHOICES)
 
