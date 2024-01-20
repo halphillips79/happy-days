@@ -140,3 +140,7 @@ table tbody tr td:last-child {
 table thead th {
     text-align: center;
 }
+
+.centered-heading {
+    text-align: center;
+}
