@@ -132,3 +132,11 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+table tbody tr td:last-child {
+    text-align: right;
+}
+
+table thead th {
+    text-align: center;
+}
